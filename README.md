@@ -41,8 +41,8 @@ Ensure you have Docker and Docker Compose installed on your system.
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/gilbertopsantosjr/fullstack-app-docker
+   cd fullstack-app-docker
    ```
 
 Run `docker compose build` then `docker compose up -d` to build and start the containers for both the frontend and backend.
