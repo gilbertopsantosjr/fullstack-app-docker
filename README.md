@@ -48,6 +48,15 @@ Ensure you have Docker and Docker Compose installed on your system.
 Run `docker compose build` then `docker compose up -d` to build and start the containers for both the frontend and backend.
 The frontend will be available at http://localhost:3000, and the backend API will be accessible at http://localhost:5000.
 
+## Known issues
+
+the application is a bit slow due the consume start wars api, the speed of this application depends on the response of external api.
+
+if you need to change the BACK_END_PORT , please edit the frontend/.env.production file
+
+do not refresh the browser via url , as this is a react app hosted into nginx, in order to access the UI , please invoke
+http://localhost:3000 once the docker container is raised
+
 ## Final Note
 
 Thank you for considering me for this opportunity! I’ve truly enjoyed working through this selection process and look forward to what’s ahead. Please feel free to explore the application and reach out with any feedback or questions.
