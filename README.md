@@ -50,12 +50,14 @@ The frontend will be available at http://localhost:3000, and the backend API wil
 
 ## Known issues
 
-the application is a bit slow due the consume start wars api, the speed of this application depends on the response of external api.
+the application is a bit slow due the consume start wars api, the speed of this application depends on the response of external api. using Redis to workaround this but need more implementation to make it work perfectly
 
 if you need to change the BACK_END_PORT , please edit the frontend/.env.production file
 
 do not refresh the browser via url , as this is a react app hosted into nginx, in order to access the UI , please invoke
-http://localhost:3000 once the docker container is raised
+http://localhost:3000 once the docker container is raised.
+
+due the time limitation, did not added unit tests
 
 ## Final Note
 

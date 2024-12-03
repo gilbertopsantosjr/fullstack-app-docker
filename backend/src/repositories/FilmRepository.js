@@ -9,7 +9,14 @@ class FilmsRepository {
   async findById(id) {
     try {
       const response = await axios.get(`https://swapi.dev/api/films/${id}/`);
-      const characters = await fetchAllInParallel(response.data.characters);
+      let characters = [];
+      if (response.data.characters) {
+        characters = await fetchAllInParallel(
+          `film:${id}`,
+          response.data.characters
+        );
+      }
+
       return makeFilm(response.data, characters);
     } catch (error) {
       const message = `Failed to fetch character data by id. ${id}`;

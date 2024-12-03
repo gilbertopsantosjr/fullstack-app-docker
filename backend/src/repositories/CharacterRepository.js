@@ -10,7 +10,13 @@ class CharacterRepository {
     try {
       console.log(`searching people by: ${id}`);
       const response = await axios.get(`https://swapi.dev/api/people/${id}/`);
-      const films = await fetchAllInParallel(response.data.films);
+      let films = [];
+      if (response.data.films) {
+        films = await fetchAllInParallel(
+          `character:${id}`,
+          response.data.films
+        );
+      }
       return makeCharacter(response.data, films);
     } catch (error) {
       const message = `Failed to fetch character data by id. ${id}`;
