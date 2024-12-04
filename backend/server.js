@@ -5,6 +5,7 @@ const QueryMetricsService = require("./src/service/QueryMetricsService");
 const characterModuleFactory = require("./src/factories/CharacterModuleFactory");
 const searchTypeModuleFactory = require("./src/factories/SearchTypeModuleFactory");
 const filmModuleFactory = require("./src/factories/FilmModuleFactory");
+const { fetchAllDataInParallel } = require("./src/infra/utils/axios.util");
 
 const app = express();
 app.use(cors());
@@ -19,6 +20,8 @@ characterModuleFactory.create(app, queryMetricsService);
 searchTypeModuleFactory.create(app, queryMetricsService);
 filmModuleFactory.create(app, queryMetricsService);
 
-app.listen(port, () => {
+app.listen(port, async () => {
+  await fetchAllDataInParallel(`https://swapi.dev/api/films/`);
+  await fetchAllDataInParallel(`https://swapi.dev/api/people/`);
   console.log(`Server running on http://localhost:${port}`);
 });
