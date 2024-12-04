@@ -46,7 +46,7 @@ Ensure you have Docker and Docker Compose installed on your system.
    ```
 
 Run `docker compose build` then `docker compose up -d` to build and start the containers for both the frontend and backend.
-The frontend will be available at http://localhost:3000, and the backend API will be accessible at http://localhost:5000.
+The frontend will be available at http://localhost:3000, and the backend API will be accessible at http://localhost:9000.
 
 ## Known issues
 
